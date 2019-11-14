@@ -22,6 +22,10 @@ body {
     color: var(--white);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .fixed {
     position: sticky;
     top: 0;
