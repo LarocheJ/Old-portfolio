@@ -26,6 +26,15 @@ html {
     scroll-behavior: smooth;
 }
 
+/* *** NAVBAR *** */
+
+#logo {
+    width: 50px;
+    max-width: 100%;
+    margin: 1rem 0;
+    transition: .3s ease all;
+}
+
 .fixed {
     position: sticky;
     top: 0;
@@ -40,6 +49,7 @@ html {
     margin-bottom: 10rem;
     padding: 0 2rem;
     background: var(--darkblue);
+    transition: .3s ease all;
 }
 
 .menu-item {
@@ -48,39 +58,107 @@ html {
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 300;
+    transition: .3s ease all;
 }
+
+.menu-item:hover {
+    color: var(--lightblue);
+}
+
+/* *** END NAVBAR *** */
 
 .container {
     width: 1100px;
     max-width: 90%;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 section {
     height: 100vh;
 }
 
+.section-heading {
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+.section-heading:after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: var(--blue);
+    position: relative;
+    top: -2rem;
+    margin-left: 15rem;
+}
+
+/* .line {
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--lightblue);
+} */
+
+/* *** HOME SECTION *** */
 #home h1 {
-    font-size: 1rem;
+    font-size: 1vw;
+    font-weight: 300;
+    margin: 0;
 }
 
 #home h2 {
-    font-size: 4rem;
+    font-size: 6vw;
     font-weight: bold;
+    margin: 0;
 }
 
 #home h3 {
-    font-size: 3rem;
+    font-size: 3vw;
+    color: var(--blue);
+    margin: 0;
 }
 
 #home p {
-    margin-bottom: 3rem;
+    margin: 3rem 0 4rem 0;
+    width: 650px;
+    max-width: 90%;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    font-weight: 300;
 }
+
+/* *** END HOME SECTION *** */
 
 .btn {
     text-decoration: none;
     color: var(--white);
     padding: 1rem 2rem;
-    border: 2px solid var(--white);
+    border: 2px solid var(--blue);
     border-radius: .5rem;
+    transition: .1s ease all;
+}
+
+.btn:hover {
+    background: var(--blue);
+}
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-2-col div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    width: 100%;
+    background: var(--black);
+    text-align: center;
+    color: var(--white);
+    padding: .3rem 0;
 }
