@@ -1,10 +1,12 @@
 // Navbar animation
 document.addEventListener("DOMContentLoaded", function (event) {
 
+    var navbar = document.querySelector("nav");
+    var navlinks = document.querySelectorAll(".menu-item");
+
     window.addEventListener("scroll", function () {
         var scroll = window.scrollY;
-        var navbar = document.querySelector("nav");
-        var navlinks = document.querySelectorAll(".menu-item");
+
 
         if (scroll >= 50) {
             navbar.style.boxShadow = "0px 1px 8px 0px rgba(0,0,0,0.1)";
@@ -25,6 +27,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
     })
 
 })
+
+//Change color of active menu item
+
+
 // Get the current year and print it in theYear located in the footer
 var date = new Date("November 18, 2019 16:34:20");
 var year = date.getFullYear();
