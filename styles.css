@@ -45,13 +45,45 @@ ul {
   font-weight: lighter;
 }
 
+.btn {
+  text-decoration: none;
+  color: var(--white);
+  padding: 1rem 2rem;
+  border: 2px solid var(--blue);
+  border-radius: 0.5rem;
+  transition: 0.1s ease all;
+	background: none;
+	cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--blue);
+}
+
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  align-items: center;
+	min-height: 580px;
+}
+
+.grid-2-col div {
+  justify-self: end;
+}
+
+.grid-3-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .responsive {
   display: none;
 }
 
 .box {
-  width: 425px;
-  height: 450px;
+  min-width: 400px;
+  min-height: 450px;
   max-width: 100%;
   padding: 1rem;
 }
@@ -66,7 +98,7 @@ ul {
 
 .social {
   position: fixed;
-  bottom: 3.5rem;
+  bottom: 4.5rem;
   left: 2rem;
   display: flex;
   flex-direction: column;
@@ -85,7 +117,7 @@ ul {
 
 .email {
   position: fixed;
-  bottom: 3.5rem;
+  bottom: 4.5rem;
   right: 2rem;
   writing-mode: vertical-rl;
 }
@@ -112,7 +144,7 @@ ul {
 }
 
 .fixed {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -122,7 +154,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10rem;
+  
   padding: 0 2rem;
   background: var(--darkblue);
   transition: 0.3s ease all;
@@ -169,7 +201,7 @@ nav {
 }
 
 section {
-  min-height: 100vh;
+  min-height: 70vh;
 }
 
 .section-heading {
@@ -177,7 +209,7 @@ section {
   font-weight: 300;
 }
 
-.section-heading:after {
+.section-heading::after {
   content: "";
   display: block;
   height: 1px;
@@ -189,7 +221,19 @@ section {
   z-index: -1;
 }
 
+.section-heading {
+	overflow: hidden;
+}
+
+#work .section-heading::after {
+	margin-left: 30rem;
+}
+
 /* *** HOME SECTION *** */
+.hero {
+	margin-top: 15rem;
+}
+
 .hero h1 {
   font-size: 1vw;
   font-weight: 300;
@@ -230,35 +274,6 @@ section {
 
 /* *** END ABOUT SECTION *** */
 
-.btn {
-  text-decoration: none;
-  color: var(--white);
-  padding: 1rem 2rem;
-  border: 2px solid var(--blue);
-  border-radius: 0.5rem;
-  transition: 0.1s ease all;
-}
-
-.btn:hover {
-  background: var(--blue);
-}
-
-.grid-2-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-  align-items: center;
-}
-
-.grid-2-col div {
-  justify-self: end;
-}
-
-.grid-3-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
 footer {
   width: 100%;
   background: var(--black);
@@ -268,10 +283,72 @@ footer {
 }
 
 footer p {
-  font-size: 0.8rem;
+  font-size: 1rem;
   line-height: 1;
+	font-family: var(--ubuntu-mono);
 }
 
+/* *** FEATURED WORK SECTION *** */
+.tools {
+	font-family: var(--ubuntu-mono);
+}
+
+.tools ul {
+	display: flex;
+}
+
+.tools ul li {
+	margin-right: 2rem;
+}
+
+#work .grid-2-col div {
+	padding-bottom: 2rem;
+}
+
+#work .grid-2-col div:nth-child(odd) {
+	justify-self: start;
+}
+/* *** END FEATURED WORK SECTION *** */
+
+/* *** CONTACT FORM *** */
+form input, textarea {
+	display: block;
+	padding: .5rem;
+	font-family: var(--ubuntu);
+	font-size: 1.2rem;
+	font-weight: lighter;
+	width: 100%;
+	background: none;
+	border: none;
+	border-bottom: 2px solid var(--blue);
+	color: var(--white);
+	outline: none;
+}
+
+form label {
+	font-family: var(--ubuntu-mono);
+	color: var(--blue);
+	font-size: 1.2rem;
+}
+
+.input-box {
+	margin-bottom: 1rem;
+	padding: 1rem;
+	width: 100%;
+}
+
+.flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#send {
+	width: 45%;
+}
+
+/* *** END CONTACT FORM *** */
+ 
 /* *** MEDIA QUERIES *** */
 @media screen and (max-width: 1024px) {
   .grid-2-col {
