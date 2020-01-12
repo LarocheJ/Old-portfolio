@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         for (i = 0; i < navlinks.length; i++) {
             if (scroll >= 50) {
                 navlinks[i].style.fontSize = "1.1rem";
-                navbar.style.boxShadow = "0px 1px 8px 0px rgba(0,0,0,0.1)";
+                navbar.style.boxShadow = "0px 1px 8px 0px rgba(0,0,0,0.3)";
                 logo.style.width = "40px";
             } else {
                 navbar.style.boxShadow = "none";

@@ -10,6 +10,9 @@
   --black: #00171f;
   --ubuntu: "Ubuntu", sans-serif;
   --ubuntu-mono: "Ubuntu Mono", monospace;
+  --rainbow-animation: rainbow 2s ease-in-out;
+  --link-color: rgb(137, 192, 255);
+  --gradient: linear-gradient(20deg, #12c2e9, #c471ed, #f64f59);
 }
 
 * {
@@ -38,11 +41,42 @@ i {
   transition: 0.2s ease all;
 }
 
+p a {
+  color: var(--link-color);
+  display: inline-block;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: var(--rainbow-animation);
+}
+
+p a:hover {
+  color: rgba(255, 255, 255, 0);
+}
+
 p,
 ul {
   line-height: 1.6;
   font-size: 1.125rem;
   font-weight: lighter;
+}
+
+img {
+  width: 100%;
+}
+
+abbr {
+  text-decoration: none;
+  cursor: help;
+  font-style: italic;
+}
+
+::selection {
+  background: var(--blue);
+}
+
+.small-txt {
+  font-size: 0.8rem;
 }
 
 .btn {
@@ -52,8 +86,8 @@ ul {
   border: 2px solid var(--blue);
   border-radius: 0.5rem;
   transition: 0.1s ease all;
-	background: none;
-	cursor: pointer;
+  background: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -63,13 +97,12 @@ ul {
 .grid-2-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-  align-items: center;
-	min-height: 580px;
+  grid-gap: 4rem;
 }
 
-.grid-2-col div {
-  justify-self: end;
+.col-1,
+.col-2 {
+  padding-bottom: 5rem;
 }
 
 .grid-3-col {
@@ -82,14 +115,31 @@ ul {
 }
 
 .box {
-  min-width: 400px;
-  min-height: 450px;
-  max-width: 100%;
-  padding: 1rem;
+  height: auto;
+  width: auto;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .border {
-  border: 4px solid var(--white);
+  border: 6px solid var(--white);
+}
+
+#featured-work .box {
+  background: linear-gradient(180deg, #1c92d2, #f2fcfe);
+}
+
+#featured-work .box img {
+  max-width: 100%;
+  display: block;
+  transition: 0.3s ease all;
+}
+
+#featured-work .box img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 3px 10px 2px rgba(0, 0, 0, 0.45);
 }
 
 .fluid-img {
@@ -108,11 +158,16 @@ ul {
 .social i {
   font-size: 2.5rem;
   margin-top: 3rem;
-  color: var(--blue);
+  color: var(--link-color);
+  display: block;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: var(--rainbow-animation);
 }
 
 .social i:hover {
-  color: var(--lightblue);
+  color: rgba(255, 255, 255, 0);
 }
 
 .email {
@@ -123,15 +178,26 @@ ul {
 }
 
 .email a {
-  color: var(--blue);
+  color: var(--link-color);
   letter-spacing: 0.2rem;
   font-family: var(--ubuntu-mono);
   font-size: 1.1rem;
-  transition: 0.2s ease all;
+  transition: color 0.2s ease all;
+  display: block;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: var(--rainbow-animation);
 }
 
 .email a:hover {
-  color: var(--lightblue);
+  color: rgba(255, 255, 255, 0);
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* *** NAVBAR *** */
@@ -148,13 +214,13 @@ ul {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 999;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
   padding: 0 2rem;
   background: var(--darkblue);
   transition: 0.3s ease all;
@@ -165,11 +231,22 @@ nav {
 .nav-links {
   display: flex;
   list-style: none;
+  font-size: 1.2rem;
 }
 
 .nav-item {
   font-weight: lighter;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease all;
+  display: block;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: var(--rainbow-animation);
+}
+
+.nav-item:hover {
+  color: rgba(255, 255, 255, 0);
 }
 
 .burger div {
@@ -201,7 +278,8 @@ nav {
 }
 
 section {
-  min-height: 70vh;
+  min-height: 80vh;
+  padding-bottom: 3rem;
 }
 
 .section-heading {
@@ -222,16 +300,16 @@ section {
 }
 
 .section-heading {
-	overflow: hidden;
+  overflow: hidden;
 }
 
-#work .section-heading::after {
-	margin-left: 30rem;
+#featured-work .section-heading::after {
+  margin-left: 30rem;
 }
 
 /* *** HOME SECTION *** */
 .hero {
-	margin-top: 15rem;
+  margin-top: 15rem;
 }
 
 .hero h1 {
@@ -256,20 +334,15 @@ section {
   margin: 3rem 0 4rem 0;
   width: 700px;
   max-width: 90%;
-  font-size: 1.220rem;
+  font-size: 1.22rem;
   font-weight: 300;
 }
 
 /* *** END HOME SECTION *** */
 
 /* *** ABOUT SECTION *** */
-#img-me {
-  background: url('images/me.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+#my-picture {
   width: 100%;
-  height: 100%;
 }
 
 /* *** END ABOUT SECTION *** */
@@ -285,74 +358,151 @@ footer {
 footer p {
   font-size: 1rem;
   line-height: 1;
-	font-family: var(--ubuntu-mono);
+  font-family: var(--ubuntu-mono);
 }
 
 /* *** FEATURED WORK SECTION *** */
 .tools {
-	font-family: var(--ubuntu-mono);
+  font-family: var(--ubuntu-mono);
+  margin-bottom: 3rem;
 }
 
 .tools ul {
-	display: flex;
+  display: flex;
 }
 
 .tools ul li {
-	margin-right: 2rem;
-}
-
-#work .grid-2-col div {
-	padding-bottom: 2rem;
+  margin-right: 2rem;
 }
 
 #work .grid-2-col div:nth-child(odd) {
-	justify-self: start;
+  justify-self: center;
 }
+
 /* *** END FEATURED WORK SECTION *** */
 
 /* *** CONTACT FORM *** */
-form input, textarea {
-	display: block;
-	padding: .5rem;
-	font-family: var(--ubuntu);
-	font-size: 1.2rem;
-	font-weight: lighter;
-	width: 100%;
-	background: none;
-	border: none;
-	border-bottom: 2px solid var(--blue);
-	color: var(--white);
-	outline: none;
+/* THANKS TO  Dev Ed for his tutorial on how to do the contact form animations - https://www.youtube.com/watch?v=IxRJ8vplzAo*/
+.form {
+  position: relative;
 }
 
-form label {
-	font-family: var(--ubuntu-mono);
-	color: var(--blue);
-	font-size: 1.2rem;
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+  padding-top: 1.5rem;
+  border: none;
+  width: 100%;
+  background: none;
+  font-family: var(--ubuntu);
+  font-weight: lighter;
+  color: var(--white);
+  font-size: 1.2rem;
+  outline: none;
 }
 
-.input-box {
-	margin-bottom: 1rem;
-	padding: 1rem;
-	width: 100%;
+.name-box,
+.email-box,
+.message-box {
+  position: relative;
+  margin: 1rem 0;
+  width: 100%;
 }
 
-.flex {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.name-box {
+  margin-right: 2rem;
+}
+
+.name-box label,
+.email-box label,
+.message-box label {
+  font-family: var(--ubuntu-mono);
+  color: var(--lightblue);
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid var(--blue);
+  height: 50px;
+  overflow: hidden;
+  background: none;
+}
+
+.name-box label::after,
+.email-box label::after,
+.message-box label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid var(--blue);
+  transform: translateX(-100%);
+  transition: 0.3s ease all;
+}
+
+.content-name {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  transition: 0.3s ease all;
+}
+
+.form input:focus+.label-name .content-name,
+.form input:valid+.label-name .content-name,
+.form textarea:focus+.label-name .content-name,
+.form textarea:valid+.label-name .content-name {
+  transform: translateY(-150%);
+  font-size: 1rem;
+  color: var(--blue);
+}
+
+.form input:focus+.label-name::after,
+.form input:valid+.label-name::after,
+.form textarea:focus+.label-name::after,
+.form textarea:valid+.label-name::after {
+  transform: translateX(0%);
 }
 
 #send {
-	width: 45%;
+  width: 45%;
+  font-size: 1.4rem;
+  font-weight: lighter;
+  font-family: var(--ubuntu);
 }
 
 /* *** END CONTACT FORM *** */
- 
+
+/* *** ANIMATIONS *** */
+@keyframes rainbow {
+  0% {
+    background-position: left;
+  }
+
+  50% {
+    background-position: right;
+  }
+
+  100% {
+    background-position: left;
+  }
+}
+
+/* *** END ANIMATIONS *** */
+
 /* *** MEDIA QUERIES *** */
 @media screen and (max-width: 1024px) {
   .grid-2-col {
     grid-template-columns: 1fr;
+    grid-gap: 0;
+  }
+
+  .grid-2-col div {
+    justify-self: center;
   }
 }
 
@@ -407,6 +557,10 @@ form label {
     border: 1px solid #fff;
   }
 
+  .hero {
+    margin-top: 10rem;
+  }
+
   .hero h1 {
     font-size: 1rem;
   }
@@ -417,6 +571,28 @@ form label {
 
   .hero h3 {
     font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .section-heading {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .grid-3-col {
+    grid-template-columns: 1fr;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+
+  .name-box {
+    margin-right: 0;
   }
 }
 
