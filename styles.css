@@ -153,6 +153,8 @@ abbr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation-name: zoom-from-bottom;
+  animation-duration: 1s;
 }
 
 .social i {
@@ -316,18 +318,24 @@ section {
   font-size: 1vw;
   font-weight: 300;
   margin: 0;
+  animation-name: zoom-from-left;
+  animation-duration: 1.5s;
 }
 
 .hero h2 {
   font-size: 6vw;
   font-weight: bold;
   margin: 0;
+  animation-name: zoom-from-left;
+  animation-duration: 1s;
 }
 
 .hero h3 {
   font-size: 3vw;
   color: var(--blue);
   margin: 0;
+  animation-name: zoom-from-left;
+  animation-duration: .5s;
 }
 
 .hero p {
@@ -336,6 +344,13 @@ section {
   max-width: 90%;
   font-size: 1.22rem;
   font-weight: 300;
+  animation-name: fade-in;
+  animation-duration: 2s;
+}
+
+.hero .btn {
+  animation-name: fade-in;
+  animation-duration: 2s;
 }
 
 /* *** END HOME SECTION *** */
@@ -478,17 +493,38 @@ footer p {
 /* *** END CONTACT FORM *** */
 
 /* *** ANIMATIONS *** */
-@keyframes rainbow {
-  0% {
-    background-position: left;
+.fade-in {
+  animation-name: fade-in;
+  animation-duration: 2s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
   }
 
-  50% {
-    background-position: right;
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-from-left {
+  from {
+    transform: translateX(-120%);
   }
 
-  100% {
-    background-position: left;
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoom-from-bottom {
+  from {
+    transform: translateY(150%);
+  }
+
+  to {
+    transform: translateX(0);
   }
 }
 
@@ -612,7 +648,6 @@ footer p {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* ANIMATIONS */
 @keyframes navLinkFade {
   from {
     opacity: 0;

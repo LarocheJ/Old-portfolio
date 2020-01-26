@@ -15,6 +15,7 @@
     content="I am a freelance web designer based in Calgary, Alberta. Shoot me a message to start talking about your next web project!">
   <meta name="robots" content="index,follow" />
   <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
@@ -107,7 +108,7 @@
 
             <p>
               I am a web designer currently based in Calgary, Alberta and
-              available for full time work. I specialize on the front-end
+              available for work. I specialize on the front-end
               aspect of building beautiful, user-centered and responsive
               websites.
             </p>
@@ -121,7 +122,7 @@
         <h1 class="section-heading">Featured Work</h1>
         <div class="grid-2-col">
           <!--PIECE 1-->
-          <div class="col-1">
+          <div class="col-1" data-aos="fade-up">
             <div class="box">
               <!-- PIECE 1 PICTURE HERE -->
               <a href="https://intern52.com/" target="_blank" title="Clicking this will open another tab"><img
@@ -129,7 +130,7 @@
             </div>
           </div>
 
-          <div class="col-2">
+          <div class="col-2" data-aos="fade-up">
             <h2>Intern 52</h2>
             <h3>Providing potential interns with an awesome opportunity</h3>
             <p>
@@ -161,7 +162,7 @@
           </div>
 
           <!--PIECE 2-->
-          <div class="col-1">
+          <div class="col-1" data-aos="fade-up">
             <div class="box">
               <!-- PIECE 2 PICTURE HERE -->
               <a href="https://yournextbest.com/" target="_blank" title="Clicking this will open another tab"><img
@@ -169,7 +170,7 @@
             </div>
           </div>
 
-          <div class="col-2" id="ynb">
+          <div class="col-2" id="ynb" data-aos="fade-up">
             <h2>Yournextbest</h2>
             <h3>Adding value to kids going through school</h3>
             <p>
@@ -212,7 +213,7 @@
           </div>
 
           <!--PIECE 3-->
-          <div class="col-1">
+          <div class="col-1" data-aos="fade-up">
             <div class="box">
               <!-- PIECE 3 PICTURE HERE -->
               <a href="http://grammys.jimmylaroche.com/" target="_blank"
@@ -221,7 +222,7 @@
             </div>
           </div>
 
-          <div class="col-2">
+          <div class="col-2" data-aos="fade-up">
             <h2>Grammy's Bakery</h2>
             <h3>A mock e-commerce website</h3>
             <p>
@@ -257,7 +258,7 @@
           </div>
 
           <!--PIECE 4-->
-          <div class="col-1">
+          <div class="col-1" data-aos="fade-up">
             <div class="box">
               <!-- PIECE 4 PICTURE HERE -->
               <a href="http://ftmt.jimmylaroche.com/" target="_blank" title="Clicking this will open another tab"><img
@@ -265,7 +266,7 @@
             </div>
           </div>
 
-          <div class="col-2">
+          <div class="col-2" data-aos="fade-up">
             <h2>First Time Muay Thai</h2>
             <h3>E-learning project</h3>
             <p>
@@ -304,7 +305,7 @@
           </div>
 
           <!--PIECE 5-->
-          <div class="col-1">
+          <div class="col-1" data-aos="fade-up">
             <div class="box">
               <!-- PIECE 5 PICTURE HERE -->
               <a href="https://relatacode.com/" target="_blank" title="Clicking this will open another tab"><img
@@ -312,7 +313,7 @@
             </div>
           </div>
 
-          <div class="col-2">
+          <div class="col-2" data-aos="fade-up">
             <h2>Relatacode</h2>
             <h3>Personal Blog Experiment</h3>
             <p>
@@ -350,7 +351,7 @@
           </div>
 
           <!--PIECE 6-->
-          <div class="col-1">
+          <div class="col-1" data-aos="fade-up">
             <div class="box">
               <!-- PIECE 6 PICTURE HERE -->
               <a href="http://spaceadventure.jimmylaroche.com/" target="_blank"
@@ -359,7 +360,7 @@
             </div>
           </div>
 
-          <div class="col-2">
+          <div class="col-2" data-aos="fade-up">
             <h2>Space Adventure</h2>
             <h3>
               Taking potential students through an NMPD Space Adventure
@@ -407,7 +408,7 @@
         <h1 class="section-heading">About</h1>
         <div class="grid-2-col">
           <div class="col-1">
-            <div>
+            <div data-aos="fade-right">
               <p>
                 I’m a recent graduate from the
                 <abbr title="Southern Alberta Institute of Technology">SAIT</abbr>
@@ -471,7 +472,7 @@
               </div>
             </div>
           </div>
-          <div class="col-2">
+          <div class="col-2" data-aos="fade-left">
             <div class="box border">
               <div id="my-picture">
                 <img src="images/me-in-tux.jpg" alt="Jimmy Laroche wearing a tuxedo" />
@@ -489,7 +490,7 @@
           Want to work with me or just feel like talking? Shoot me a message
           and I'll get back to you as soon as possible!
         </p>
-        <div class="form">
+        <div class="form" data-aos="fade-up">
           <form action="send.php" method="post">
             <div class="flex">
               <div class="name-box">
@@ -525,6 +526,11 @@
   </footer>
 
   <script src="main.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>

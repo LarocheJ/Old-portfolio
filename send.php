@@ -3,13 +3,13 @@
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-    $from = 'jimmy@jimmylaroche.com';
+    $from = 'contact@jimmylaroche.com';
     $subject = 'New message from '.$_POST['name'].' on jimmylaroche.com';
     $body = "User Name: $name.\n".
     "User Email: $email.\n".
     "User Message: $message.\n";
 
-    $to = 'jimmy@jimmylaroche.com';
+    $to = 'contact@jimmylaroche.com';
     $headers = "From: $from \r\n";
     $headers .= "Reply-To: $email \r\n";
 
