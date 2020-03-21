@@ -1,19 +1,17 @@
 // Navbar animation
 document.addEventListener("DOMContentLoaded", (event) => {
 
-    var navbar = document.querySelector("nav");
-    var navlinks = document.querySelectorAll(".nav-item");
+    const navbar = document.querySelector("nav");
+    const navlinks = document.querySelectorAll(".nav-item");
 
     window.addEventListener('scroll', () => {
-        var scroll = window.scrollY;
+        const scroll = window.scrollY;
 
         for (i = 0; i < navlinks.length; i++) {
             if (scroll >= 50) {
                 navlinks[i].style.fontSize = "1.1rem";
-                navbar.style.boxShadow = "0px 1px 8px 0px rgba(0,0,0,0.3)";
                 logo.style.width = "40px";
             } else {
-                navbar.style.boxShadow = "none";
                 logo.style.width = "50px";
                 navlinks[i].style.fontSize = "1.2rem";
             }
@@ -48,7 +46,19 @@ const navSlide = () => {
 navSlide();
 
 // Get the current year and print it in theYear located in the footer
-var date = new Date("November 18, 2019 16:34:20");
-var year = date.getFullYear();
+const date = new Date("November 18, 2019 16:34:20");
+const year = date.getFullYear();
 
 theYear.innerHTML = year;
+
+// Show more button
+
+$(".piece").css("display", "none");
+$(".piece").slice(0, 3).show();
+
+$("#loadMore").on("click", () => {
+    $(".piece:hidden").slice(0, 3).slideDown();
+    if ($("#featured-work div:hidden").length === 0) {
+        $("#loadMore").fadeOut(800);
+    }
+});

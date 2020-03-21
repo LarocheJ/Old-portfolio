@@ -62,7 +62,7 @@ ul {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
 }
 
 abbr {
@@ -79,6 +79,12 @@ abbr {
   font-size: 0.8rem;
 }
 
+section h1 {
+  margin-top: 0;
+}
+
+/* ELEMENTS */
+
 .btn {
   text-decoration: none;
   color: var(--white);
@@ -94,35 +100,6 @@ abbr {
   background: var(--blue);
 }
 
-.grid-2-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 4rem;
-}
-
-.col-1,
-.col-2 {
-  padding-bottom: 5rem;
-}
-
-.grid-3-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.responsive {
-  display: none;
-}
-
-.box {
-  height: auto;
-  width: auto;
-  padding: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .border {
   border: 6px solid var(--white);
 }
@@ -132,7 +109,7 @@ abbr {
 }
 
 #featured-work .box img {
-  max-width: 100%;
+  width: 100%;
   display: block;
   transition: 0.3s ease all;
 }
@@ -140,10 +117,6 @@ abbr {
 #featured-work .box img:hover {
   transform: scale(1.05);
   box-shadow: 0px 3px 10px 2px rgba(0, 0, 0, 0.45);
-}
-
-.fluid-img {
-  width: 100%;
 }
 
 .social {
@@ -202,6 +175,17 @@ abbr {
   align-items: center;
 }
 
+#loadMore {
+  width: 400px;
+  max-width: 100%;
+  margin: 3rem auto;
+  outline: none;
+  display: block;
+  font-size: 18px;
+  font-family: var(--ubuntu);
+  text-transform: uppercase;
+}
+
 /* *** NAVBAR *** */
 
 #logo {
@@ -217,23 +201,27 @@ abbr {
   left: 0;
   right: 0;
   z-index: 999;
+  background: var(--darkblue);
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
-  background: var(--darkblue);
+  /* padding: 0 2rem; */
+
   transition: 0.3s ease all;
   font-size: 0;
   z-index: 999;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
   font-size: 1.2rem;
+  margin: 0;
 }
 
 .nav-item {
@@ -269,24 +257,93 @@ nav {
 
 /* *** END NAVBAR *** */
 
-.wrapper {
-  overflow-x: hidden;
+/* LAYOUT */
+
+main {
+  padding-bottom: 4rem;
 }
+
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 4rem;
+}
+
+.piece {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+.grid-2-col:nth-of-type(1) .piece:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+
+.grid-2-col:nth-of-type(2) .piece:nth-of-type(odd) {
+  flex-direction: row-reverse;
+}
+
+#featured-work .grid-2-col {
+  grid-template-columns: 1fr;
+}
+
+.piece div {
+  width: 100%;
+  margin-right: 2rem;
+}
+
+.div-col-2:nth-of-type(even) {
+  margin-right: 0;
+}
+
+/* .col-1,
+.col-2 {
+  padding-bottom: 2rem;
+} */
+
+.col-2 h2 {
+  margin-top: 0;
+}
+
+.grid-3-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.responsive {
+  display: none;
+}
+
+.box {
+  height: auto;
+  width: auto;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .wrapper {
+  overflow-x: hidden;
+} */
 
 .container {
   width: 1100px;
-  max-width: 85%;
+  max-width: 90%;
   margin: 0 auto;
 }
 
 section {
   min-height: 80vh;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 }
 
 .section-heading {
   font-size: 4rem;
   font-weight: 300;
+  position: relative;
 }
 
 .section-heading::after {
@@ -384,14 +441,11 @@ footer p {
 
 .tools ul {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .tools ul li {
   margin-right: 2rem;
-}
-
-#work .grid-2-col div:nth-child(odd) {
-  justify-self: center;
 }
 
 /* *** END FEATURED WORK SECTION *** */
@@ -547,23 +601,31 @@ footer p {
     overflow-x: hidden;
   }
 
-  nav {
-    margin-bottom: 7rem;
+  .piece {
+    padding: 2rem 0;
+  }
+
+  .piece div {
+    margin-right: 0;
   }
 
   .nav-links {
     position: absolute;
     right: 0;
-    top: 6vh;
-    height: 92vh;
-    width: 50%;
-    background-color: var(--black);
+    top: 0;
+    height: 100vh;
+    width: 80%;
+    background-color: rgba(26, 26, 26, 0.99);
     display: flex;
     flex-direction: column;
     align-items: center;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
     justify-content: space-around;
+  }
+
+  #featured-work h2 {
+    margin-top: 1rem;
   }
 
   .responsive {
@@ -576,6 +638,10 @@ footer p {
 
   .email {
     display: none;
+  }
+
+  .piece {
+    display: block;
   }
 
   .nav-links li {
@@ -615,6 +681,14 @@ footer p {
 
   .section-heading {
     font-size: 3rem;
+  }
+
+  .section-heading::after {
+    display: none;
+  }
+
+  .grid-2-col {
+    display: block;
   }
 }
 
