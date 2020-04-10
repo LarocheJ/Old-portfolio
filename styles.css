@@ -186,6 +186,18 @@ section h1 {
   text-transform: uppercase;
 }
 
+/* ICONS */
+
+.fa-external-link-alt {
+  font-size: 16px;
+  margin-left: 0.5rem;
+}
+
+.fa-arrow-down,
+.fa-paper-plane {
+  margin-left: 0.5rem;
+}
+
 /* *** NAVBAR *** */
 
 #logo {
@@ -276,7 +288,6 @@ main {
   align-items: flex-start;
 }
 
-
 .grid-2-col:nth-of-type(1) .piece:nth-of-type(even) {
   flex-direction: row-reverse;
 }
@@ -298,12 +309,24 @@ main {
   margin-right: 0;
 }
 
-/* .col-1,
-.col-2 {
-  padding-bottom: 2rem;
-} */
-
 .col-2 h2 {
+  margin: 0;
+}
+
+.col-2 h3 {
+  font-style: italic;
+  font-weight: normal;
+  margin-top: 0.5rem;
+}
+
+.col-2 h4 {
+  margin-bottom: 0;
+  text-decoration: underline;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.col-2 p {
   margin-top: 0;
 }
 
@@ -392,7 +415,7 @@ section {
   color: var(--blue);
   margin: 0;
   animation-name: zoom-from-left;
-  animation-duration: .5s;
+  animation-duration: 0.5s;
 }
 
 .hero p {
@@ -521,19 +544,19 @@ footer p {
   transition: 0.3s ease all;
 }
 
-.form input:focus+.label-name .content-name,
-.form input:valid+.label-name .content-name,
-.form textarea:focus+.label-name .content-name,
-.form textarea:valid+.label-name .content-name {
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name,
+.form textarea:focus + .label-name .content-name,
+.form textarea:valid + .label-name .content-name {
   transform: translateY(-150%);
   font-size: 1rem;
   color: var(--blue);
 }
 
-.form input:focus+.label-name::after,
-.form input:valid+.label-name::after,
-.form textarea:focus+.label-name::after,
-.form textarea:valid+.label-name::after {
+.form input:focus + .label-name::after,
+.form input:valid + .label-name::after,
+.form textarea:focus + .label-name::after,
+.form textarea:valid + .label-name::after {
   transform: translateX(0%);
 }
 

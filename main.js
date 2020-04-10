@@ -46,10 +46,7 @@ const navSlide = () => {
 navSlide();
 
 // Get the current year and print it in theYear located in the footer
-const date = new Date("November 18, 2019 16:34:20");
-const year = date.getFullYear();
-
-theYear.innerHTML = year;
+$("#theYear").text((new Date).getFullYear());
 
 // Show more button
 
