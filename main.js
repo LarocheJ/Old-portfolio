@@ -19,6 +19,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     })
 })
 
+$(document).ready(()=>{
+    $(".hero").addClass("fade-from-bottom");
+})
+
 //Responsive menu animation
 const navSlide = () => {
     const burger = document.querySelector('.burger');

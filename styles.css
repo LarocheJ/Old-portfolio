@@ -273,8 +273,6 @@ nav {
 
 main {
   padding-bottom: 4rem;
-  animation-name: fade-from-bottom;
-  animation-duration: 1s;
 }
 
 .grid-2-col {
@@ -562,6 +560,11 @@ footer p {
 .fade-in {
   animation-name: fade-in;
   animation-duration: 2s;
+}
+
+.fade-from-bottom {
+  animation-name: fade-from-bottom;
+  animation-duration: 1s;
 }
 
 @keyframes fade-in {
